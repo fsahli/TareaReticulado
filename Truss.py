@@ -113,8 +113,17 @@ class Truss:
             
         for i in range(len(self.nodes)):
             fo.write("Displacement in node %i: [%f,%f]\n" % (i,DX[2*i],DX[2*i+1]) )
-                
+            
         fo.close()
+    def print_results(self,DX,R,F):
+        print("Results, Force")
+        for i in range(len(self.bars)):
+            print("Force Bar %i: %.2f" % (i,F[i]))
+        for i in range(len(self.reac)):
+            print("Reaction in node %i, components [%i,%i]: %.2f" % (self.reac[i,0],self.reac[i,1],self.reac[i,2],R[i]))
+            
+        for i in range(len(self.nodes)):    
+            print("Displacement in node %i: [%e,%e]" % (i,DX[2*i],DX[2*i+1]) ) 
     def X(self,i,j):
         x = (self.nodes[i,0]-self.nodes[j,0])/(np.sqrt((self.nodes[i,0]-self.nodes[j,0])**2+(self.nodes[i,1]-self.nodes[j,1])**2))
         return x
