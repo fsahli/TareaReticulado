@@ -15,7 +15,7 @@ class Truss:
             self.nodes.append(a)
             line = fo.readline()
         self.nodes = np.array(self.nodes)
-        print(self.nodes)    
+        #print(self.nodes)    
 
 
         line = fo.readline()
@@ -27,7 +27,7 @@ class Truss:
             line = fo.readline()
 
         self.bars = np.array(self.bars)
-        print(self.bars)   
+        #print(self.bars)   
 
 
         line = fo.readline()
@@ -39,7 +39,7 @@ class Truss:
             line = fo.readline()
 
         self.reac = np.array(self.reac)
-        print(self.reac)   
+        #print(self.reac)   
 
         line = fo.readline()
 
@@ -50,7 +50,7 @@ class Truss:
             line = fo.readline()
 
         self.force = np.array(self.force)
-        print(self.force)
+        #print(self.force)
 
         fo.close()
     def plot(self):
